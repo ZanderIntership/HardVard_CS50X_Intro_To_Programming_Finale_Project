@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="team.css" rel="stylesheet">
+    <script src="functions.js" defer></script>
+</head>
+<body>
+
+    <div id="Header-Container">
+        <h3>Task Flow</h3>
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="task.html">Tasks</a></li>
+        </ul>
+    </div>
+    <div id="Body-Container">
+        <div id="Team-Sub-Conatiner">
+            <div >
+                <h1>Team management</h1>
+                <p>Manage your team </p>
+            </div>
+            <div>
+                <button id="Add-T-Member"> + Add Team Memeber</button>
+            </div>
+        </div>
+        
+    </div>
+    <div>
+        <div id="Team-Member-View"></div>
+    </div>
+    
+
+    </div>
+    <div id="Team-member-Input-Container" class="hidden">
+        <div id="Team-member-Modal">
+            <h3>Add Team Member</h3>
+            <div id="Input-Fields1">
+                <div>
+                    <p >Full Name</p>
+                    <input placeholder="Johny" type="text" id="Team-Member-Name">
+                </div>
+                <div>
+                    <p >Email</p>
+                    <input placeholder="Kenny@Gmail.com" type="email" id="Team-Member-Email">
+                </div>
+            </div>
+
+            <div id="Input-Fileds2">
+                <p>Role</p>
+                <input placeholder="Tier 2 Software Engineer" id="Team-Memeber-Role">
+            </div>
+
+            <div id="Team-member-Buttons">
+                <button id="Cancel-Btn">Cancel</button>
+                <button id="Confirm-Member-Btn">Add Member</button>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

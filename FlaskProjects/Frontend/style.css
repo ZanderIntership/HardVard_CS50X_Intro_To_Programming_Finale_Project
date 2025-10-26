@@ -1,0 +1,207 @@
+/* === Base Reset & Layout === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Poppins", sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top left, #0a0f18, #0a0c12);
+  color: #e2e8f0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Header === */
+#Header-Container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(18, 22, 30, 0.6);
+  backdrop-filter: blur(12px);
+  color: #f9fafb;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.15);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.08);
+}
+
+#Header-Container h3 {
+  font-size: 1.6rem;
+  color: #00e0ff;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+#Header-Container ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+#Header-Container ul li {
+  cursor: pointer;
+  color: #9ca3af;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+#Header-Container ul li:hover {
+  color: #00e0ff;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+}
+
+#Header-Container a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* === Dashboard Body === */
+#Body-Container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 2rem;
+  overflow: hidden;
+}
+
+/* === Title Section === */
+#Body-Container-Header {
+  margin-bottom: 1.5rem;
+}
+
+#Body-Container-Header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+#Body-Container-Header p {
+  font-size: 0.95rem;
+  color: #9ca3af;
+  margin-top: 0.3rem;
+}
+
+/* === Metrics Row === */
+#Body-Container-Metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+#Body-Container-Metrics > div {
+  background: rgba(25, 30, 40, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 1.2rem 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 15px rgba(0, 255, 255, 0.05);
+}
+
+#Body-Container-Metrics > div:hover {
+  border-color: rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+}
+
+#Body-Container-Metrics p:first-child {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+#Body-Container-Metrics h3 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin: 0.4rem 0;
+}
+
+#Body-Container-Metrics p:last-child {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* === Lower Dashboard Layout === */
+#Sub-Body-Container {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 2fr 1.2fr;
+  gap: 1.5rem;
+  overflow: hidden;
+}
+
+/* === Recent Activity === */
+#Recent-Acitvity {
+  background: rgba(25, 30, 40, 0.6);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
+}
+
+#Recent-Acitvity::before {
+  content: "Recent Activity";
+  color: #00e0ff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.25);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  display: block;
+}
+
+/* === Task Metrics (Charts Area) === */
+#Task-metrics {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+
+#Task-metrics > div {
+  background: rgba(25, 30, 40, 0.6);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  padding: 1.5rem;
+  box-shadow: inset 0 0 20px rgba(0, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+#Task-metrics > div:hover {
+  border-color: rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+}
+
+#Task-metrics h1 {
+  font-size: 1.1rem;
+  color: #00e0ff;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+  padding-bottom: 0.4rem;
+}
+
+/* === Subtle Animations === */
+#Main-Container-Frame {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === No Scrollbars === */
+::-webkit-scrollbar {
+  display: none;
+}

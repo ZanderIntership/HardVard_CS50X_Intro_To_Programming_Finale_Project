@@ -1,0 +1,356 @@
+/* ===== Base Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Poppins", sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top left, #0a0f18, #0a0c12);
+  color: #e2e8f0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ===== Header ===== */
+#Header-Container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(18, 22, 30, 0.6);
+  backdrop-filter: blur(12px);
+  padding: 1rem 2rem;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.15);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.08);
+}
+
+#Header-Container h3 {
+  font-size: 1.6rem;
+  color: #00e0ff;
+  margin: 0;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+#Header-Container ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+#Header-Container li {
+  font-weight: 500;
+  color: #cbd5e1;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+#Header-Container li:hover,
+#Header-Container a:hover {
+  color: #00e0ff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+}
+
+#Header-Container a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ===== Body Container ===== */
+#Body-Container {
+  padding: 2.5rem 3rem 1rem 3rem;
+}
+
+/* ===== Team Header Section ===== */
+#Team-Sub-Conatiner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(25, 30, 40, 0.6);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 1.8rem 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+#Team-Sub-Conatiner:hover {
+  border-color: rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.08);
+}
+
+#Team-Sub-Conatiner h1 {
+  font-size: 1.8rem;
+  color: #f8fafc;
+  margin-bottom: 0.4rem;
+}
+
+#Team-Sub-Conatiner p {
+  color: #9ca3af;
+  font-size: 0.95rem;
+}
+
+/* ===== Add Button ===== */
+#Add-T-Member {
+  background: linear-gradient(90deg, #00e0ff, #007bff);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.2);
+}
+
+#Add-T-Member:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+#Team-Member-Main{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== Team Member View ===== */
+#Team-Member-View {
+  margin: 2rem 3rem;
+  background: rgba(25, 30, 40, 0.5);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 1.5rem;
+  min-height: 250px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+/* ===== Input Container ===== */
+#Team-member-Input-Container {
+  margin: 2rem 3rem;
+  background: rgba(25, 30, 40, 0.65);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 1.8rem 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
+}
+
+#Team-member-Input-Container h3 {
+  color: #00e0ff;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.25);
+  padding-bottom: 0.5rem;
+}
+
+/* ===== Input Fields Layout ===== */
+#Input-Fields1 {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+#Input-Fields1 div,
+#Input-Fileds2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#Input-Fields1 p,
+#Input-Fileds2 p {
+  margin-bottom: 0.4rem;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+/* ===== Inputs ===== */
+input {
+  background: rgba(15, 20, 28, 0.6);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  color: #e2e8f0;
+  outline: none;
+  font-size: 0.95rem;
+  transition: 0.3s ease;
+}
+
+input::placeholder {
+  color: #6b7280;
+}
+
+input:focus {
+  border-color: rgba(0, 255, 255, 0.4);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.25);
+}
+
+/* ===== Buttons Inside Form ===== */
+#Team-member-Input-Container button {
+  margin-top: 1.2rem;
+  margin-right: 1rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+#Cancel-Btn {
+  background: rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+}
+
+#Cancel-Btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+#Confirm-Member-Btn {
+  background: linear-gradient(90deg, #00e0ff, #007bff);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+#Confirm-Member-Btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  #Input-Fields1 {
+    flex-direction: column;
+  }
+
+  #Team-Sub-Conatiner {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+
+/* ===== Modal Overlay ===== */
+#Team-member-Input-Container {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 15, 20, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(6px);
+  z-index: 999;
+  transition: opacity 0.3s ease;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ===== Modal Box ===== */
+#Team-member-Modal {
+  background: rgba(25, 30, 40, 0.9);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 420px;
+  max-width: 90%;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+  animation: popUp 0.25s ease forwards;
+}
+
+@keyframes popUp {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+#Team-member-Modal h3 {
+  color: #00e0ff;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+#Input-Fields1,
+#Input-Fileds2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+#Team-member-Buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+#TeamMemberContainer {
+  background-color: #1e293b;
+  color: #ffffff;
+  padding: 25px 20px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 250px;      /* flexible width */
+  max-width: 400px;
+  min-width: 250px;
+  height: auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+}
+/* Hover effect for a subtle lift */
+#TeamMemberContainer:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0px 16px rgb(66, 222, 228);
+}
+
+/* Styling the headings and paragraphs inside */
+#TeamMemberContainer h3 {
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+#TeamMemberContainer p {
+  margin: 3px 0;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.remove-member-btn{
+    border-radius: 15px;
+    background-color: #e7f2f3;
+    box-shadow: 0px 0px 20px #00e0ff;
+    transition: 1s ease-out;
+    width: 100%;
+    height: 30px;
+
+}
+
+.remove-member-btn:hover{
+    background-color: #fd0202;
+    box-shadow: 0px 0px 20px red;
+    color: rgb(0, 0, 0);
+}
+
