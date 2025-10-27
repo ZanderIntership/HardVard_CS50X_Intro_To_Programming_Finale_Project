@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Work Flow App</title>
+  <link rel="stylesheet" href="styles (1).css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Study <span>WorkFlow</span></div>
+    <div class="tabs" role="tablist">
+      <button class="tab-btn active" data-section="dashboard" role="tab" aria-selected="true">Dashboard</button>
+      <button class="tab-btn" data-section="teams" role="tab">Teams</button>
+      <button class="tab-btn" data-section="members" role="tab">Members</button>
+      <button class="tab-btn" data-section="tickets" role="tab">Tickets</button>
+      <button class="tab-btn" data-section="activity" role="tab">Activity</button>
+    </div>
+    <div class="utilities">
+      <button id="exportBtn" class="ghost">Export</button>
+      <button id="importBtn" class="ghost">Import</button>
+      <input id="importFile" type="file" accept="application/json" hidden />
+      <button id="resetBtn" class="danger">Reset</button>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="dashboard" class="section active" role="tabpanel">
+      <h2>Dashboard</h2>
+      <div class="cards">
+        <div class="card"><div class="label">Total Employees</div><div class="value" id="totalEmployees">0</div></div>
+        <div class="card"><div class="label">Active Tasks</div><div class="value" id="activeTasks">0</div></div>
+        <div class="card"><div class="label">Avg Workload</div><div class="value" id="avgWorkload">0</div></div>
+        <div class="card"><div class="label">High Priority</div><div class="value" id="highPriorityCount">0</div></div>
+      </div>
+
+      <div class="grid-2">
+        <div class="panel">
+          <h3>Task Status Distribution</h3>
+          <div id="statusChart" class="bar-chart"></div>
+        </div>
+        <div class="panel">
+          <h3>Task Priority Distribution</h3>
+          <div id="priorityChart" class="bar-chart"></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Team Load (tasks per team)</h3>
+        <div id="teamLoad" class="bar-chart"></div>
+      </div>
+
+      <div class="panel">
+        <h3>Recent Activity</h3>
+        <ul id="recentActivity" class="activity-list"></ul>
+      </div>
+    </section>
+
+
+    <section id="teams" class="section" role="tabpanel">
+      <header class="section-header">
+        <h2>Teams</h2>
+        <button id="addTeamBtn" class="primary">+ New Team</button>
+      </header>
+      <form id="teamForm" class="form hidden">
+        <input type="hidden" name="id" />
+        <div class="row">
+          <label>Name</label>
+          <input name="name" required placeholder="e.g., Platform Team" />
+        </div>
+        <div class="row">
+          <label>Description</label>
+          <input name="description" placeholder="optional" />
+        </div>
+        <div class="actions">
+          <button class="primary" type="submit">Save</button>
+          <button type="button" class="ghost" id="cancelTeam">Cancel</button>
+        </div>
+      </form>
+      <div id="teamList" class="table"></div>
+    </section>
+
+
+    <section id="members" class="section" role="tabpanel">
+      <header class="section-header">
+        <h2>Members</h2>
+        <button id="addMemberBtn" class="primary">+ New Member</button>
+      </header>
+      <form id="memberForm" class="form hidden">
+        <input type="hidden" name="id" />
+        <div class="row">
+          <label>Name</label>
+          <input name="name" required placeholder="e.g., Jane Doe" />
+        </div>
+        <div class="row">
+          <label>Gmail</label>
+          <input name="email" type="email" required placeholder="name@gmail.com" />
+        </div>
+        <div class="row">
+          <label>Role</label>
+          <input name="role" required placeholder="e.g., Frontend Developer" />
+        </div>
+        <div class="row">
+          <label>Position</label>
+          <input name="position" placeholder="e.g., Senior, Intern, Lead" />
+        </div>
+        <div class="row">
+          <label>Team</label>
+          <select name="teamId" id="memberTeamSelect"></select>
+        </div>
+        <div class="actions">
+          <button class="primary" type="submit">Save</button>
+          <button type="button" class="ghost" id="cancelMember">Cancel</button>
+        </div>
+      </form>
+      <div id="memberList" class="table"></div>
+    </section>
+
+  
+    <section id="tickets" class="section" role="tabpanel">
+      <header class="section-header">
+        <h2>Tickets</h2>
+        <button id="addTicketBtn" class="primary">+ New Ticket</button>
+      </header>
+      <form id="ticketForm" class="form hidden">
+        <input type="hidden" name="id" />
+        <div class="row">
+          <label>Title</label>
+          <input name="title" required placeholder="e.g., Fix login bug" />
+        </div>
+        <div class="row">
+          <label>Description</label>
+          <textarea name="description" rows="3" placeholder="optional"></textarea>
+        </div>
+        <div class="row two">
+          <div>
+            <label>Status</label>
+            <select name="status" required>
+              <option>Backlog</option>
+              <option>In Progress</option>
+              <option>Blocked</option>
+              <option>Review</option>
+              <option>Done</option>
+            </select>
+          </div>
+          <div>
+            <label>Priority</label>
+            <select name="priority" required>
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+              <option>Critical</option>
+            </select>
+          </div>
+        </div>
+        <div class="row two">
+          <div>
+            <label>Team</label>
+            <select name="teamId" id="ticketTeamSelect"></select>
+          </div>
+          <div>
+            <label>Assignee</label>
+            <select name="assigneeId" id="ticketAssigneeSelect"></select>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="primary" type="submit">Save</button>
+          <button type="button" class="ghost" id="cancelTicket">Cancel</button>
+        </div>
+      </form>
+      <div id="ticketList" class="table"></div>
+    </section>
+
+
+    <section id="activity" class="section" role="tabpanel">
+      <h2>Activity</h2>
+      <ul id="activityList" class="activity-list"></ul>
+    </section>
+  </main>
+
+  <template id="rowActionsTpl">
+    <div class="row-actions">
+      <button data-action="edit" class="small">Edit</button>
+      <button data-action="delete" class="small danger">Delete</button>
+    </div>
+  </template>
+
+  <script src="app (1).js"></script>
+</body>
+</html>
